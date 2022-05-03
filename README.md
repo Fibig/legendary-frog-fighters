@@ -1,4 +1,4 @@
-# Legendary Lennyface Fighters
+# Legendary Frog Fighters
 
 ### Beschreibung
    
@@ -21,9 +21,12 @@ Coming soon...
 ---
 
 Es sind pro Charakter 10 Skillpunkte verfügbar, welche in den Bereichen:
-- Stärke
-- Verteidigung
-- Magie
+- Angriffsschaden
+- Magischer Schaden
+- Rüstung
+- Magische Resistenz
+- Leben
+- 
 
 ... verwendet werden können.
 
