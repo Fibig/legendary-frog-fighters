@@ -34,6 +34,9 @@ Es sind pro Charakter 10 Skillpunkte verfügbar, welche in den Bereichen:
 5. Gewonnen hat die Person, welche noch einen/mehrere Charaktere hat mit mehr als 0 HP
 6. Nach dem Spiel wird der Gewinner bekannt gegeben und man wird zurück zur Raumerstellung gebracht
 
+
+![alt text](https://br.atsit.in/de/wp-content/uploads/2021/07/review-final-fantasy-ii-pixel-remaster.jpg)
+
 ---
 
 ### Arbeitsverteilung
