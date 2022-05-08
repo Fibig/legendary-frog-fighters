@@ -1,10 +1,10 @@
 # Legendary Frog Fighters
 
 ### Beschreibung
-   
-   Ein Turn-based Strategie Spiel inspiriert von dem Kampfprinzip von der Final Fantasy Spielereihe.
 
-   https://www.lwjgl.org/
+Ein Turn-based Strategie Spiel inspiriert von dem Kampfprinzip von der Final Fantasy Spielereihe.
+
+https://www.lwjgl.org/
    
 ---
 
@@ -17,6 +17,7 @@ Coming soon...
 (OPTIONAL)
 
 Es sind pro Charakter 10 Skillpunkte verfügbar, welche in den Bereichen:
+
 - Angriffsschaden
 - Magischer Schaden
 - Rüstung
@@ -37,16 +38,18 @@ Es sind pro Charakter 10 Skillpunkte verfügbar, welche in den Bereichen:
 7. Gewonnen hat die Person, welche noch einen/mehrere Charaktere hat mit mehr als 0 HP
 8. Nach dem Spiel wird der Gewinner bekannt gegeben und man wird zurück zur Raumerstellung gebracht
 
-
 ![alt text](https://br.atsit.in/de/wp-content/uploads/2021/07/review-final-fantasy-ii-pixel-remaster.jpg)
 
 ---
 
 ### Arbeitsverteilung
+
 Fabian:
+
 - Server-Client System und die Raumerstellung/-beitritt
 
 Julia:
+
 - Spielablauf und Charakterdesign
 
 ---
