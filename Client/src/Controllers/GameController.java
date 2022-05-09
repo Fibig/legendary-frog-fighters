@@ -10,6 +10,6 @@ public class GameController {
 
     public void startGameController(Stage stage, int WIDTH, int HEIGHT)  {
         new SceneController(stage, WIDTH, HEIGHT);
-
+        new OnlineController();
     }
 }
