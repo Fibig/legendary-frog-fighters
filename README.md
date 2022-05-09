@@ -3,8 +3,6 @@
 ### Beschreibung
 
 Ein Turn-based Strategie Spiel inspiriert von dem Kampfprinzip von der Final Fantasy Spielereihe.
-
-https://www.lwjgl.org/
    
 ---
 
