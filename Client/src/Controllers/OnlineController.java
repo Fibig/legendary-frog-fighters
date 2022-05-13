@@ -13,6 +13,8 @@ public class OnlineController {
             this.socket = new Socket(HOST, PORT);
             this.bufferedReader = new BufferedReader(new InputStreamReader(this.socket.getInputStream()));
             this.bufferedWriter = new BufferedWriter(new OutputStreamWriter(this.socket.getOutputStream()));
+
+            
         }  catch (Exception e) {
             e.printStackTrace();
         }

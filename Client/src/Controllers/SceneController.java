@@ -18,7 +18,6 @@ public class SceneController {
     int WIDTH;
     int HEIGHT;
     OnlineController onlineController;
-    Scene activeScene;
 
     public SceneController(Stage stage, int WIDTH, int HEIGHT, OnlineController onlineController) {
         this.stage = stage;
