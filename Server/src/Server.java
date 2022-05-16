@@ -2,14 +2,35 @@ import java.net.ServerSocket;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Server {
-    ServerSocket serversocket;
-    Socket client;
+    public static int PORT = 22333;
+    public static List<ClientHandler> userList = new ArrayList<>();
 
-    BufferedReader input;
-    PrintWriter output;
+    public static ServerSocket serversocket;
+    static Socket client;
 
+    BufferedReader bufferedReader;
+    PrintWriter printWriter;
+
+    public static void main(String[] args) {
+        try {
+            serversocket = new ServerSocket(PORT);
+            System.out.println("ready to connect");
+
+            while (true)    {
+                client = serversocket.accept();
+                System.out.println("connection made to " + client);
+
+                new ClientHandler(client).start();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+/*
     public void start() throws IOException {
         serversocket = new ServerSocket(9090);
         System.out.println("Connection Starting on port:" + serversocket.getLocalPort());
@@ -60,7 +81,7 @@ public class Server {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
 }
 
