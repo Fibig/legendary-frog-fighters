@@ -100,11 +100,11 @@ public class SceneController {
 
 
     public void setGameScene() {
-        StackPane root = new StackPane();
+        Pane root = new Pane();
         Scene scene = new Scene(root, 1200, 600);
-        Image img = new Image("res/arena grün.png");
+        Image background = new Image("res/arena grün.png");
 
-        BackgroundImage bImg = new BackgroundImage(img,
+        BackgroundImage bImg = new BackgroundImage(background,
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundPosition.DEFAULT,
@@ -112,6 +112,27 @@ public class SceneController {
 
         Background bGround = new Background(bImg);
         root.setBackground(bGround);
+
+        Image normal = new Image("res/alle frösche/normaler frosch.png",160,160,false,true);
+        ImageView normalFrosch = new ImageView(normal);
+        normalFrosch.setX(900);
+        normalFrosch.setY(300);
+
+        Image musik = new Image("res/alle frösche/musik frosch.png",160, 160,false,true);
+        ImageView musikFrosch = new ImageView(musik);
+        musikFrosch.setX(700);
+        musikFrosch.setY(225);
+
+        Image weinen = new Image("res/alle frösche/weinender frosch.png",160, 160,false,true);
+        ImageView weinFrosch = new ImageView(weinen);
+        weinFrosch.setX(900);
+        weinFrosch.setY(150);
+
+
+        root.getChildren().add(normalFrosch);
+        root.getChildren().add(musikFrosch);
+        root.getChildren().add(weinFrosch);
+
 
         stage.setScene(scene);
         stage.show();
