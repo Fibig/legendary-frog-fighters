@@ -125,7 +125,7 @@ public class SceneController {
 
         Image weinen = new Image("res/alle frösche/weinender frosch.png",160, 160,false,true);
         ImageView weinFrosch = new ImageView(weinen);
-        weinFrosch.setX(900);
+        weinFrosch.setX(850);
         weinFrosch.setY(150);
 
 
@@ -140,3 +140,5 @@ public class SceneController {
 
 
 }
+
+
