@@ -12,7 +12,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) {
-        new SceneController(stage, this.WIDTH, this.HEIGHT, new OnlineController(this.HOST, this.PORT));
+        new SceneController(stage, this.WIDTH, this.HEIGHT, this.HOST, this.PORT);
     }
 
     public static void main(String[] args) {

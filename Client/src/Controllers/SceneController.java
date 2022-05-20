@@ -24,16 +24,17 @@ public class SceneController {
     int HEIGHT;
     OnlineController onlineController;
 
-    public SceneController(Stage stage, int WIDTH, int HEIGHT, OnlineController onlineController) {
+    public SceneController(Stage stage, int WIDTH, int HEIGHT, String HOST, int PORT) {
         this.stage = stage;
         this.stage.setResizable(false);
         this.stage.setTitle("Legendary Frog Fighters");
 
         this.WIDTH = WIDTH;
         this.HEIGHT = HEIGHT;
-        this.onlineController = onlineController;
+        this.onlineController = new OnlineController(HOST, PORT);
+        this.onlineController.start();
 
-        setGameScene();
+        setMenuScene();
         this.stage.show();
     }
 
@@ -52,8 +53,7 @@ public class SceneController {
             public void handle(ActionEvent actionEvent) {
                 try {
                     if (!textField.getText().isBlank()) {
-                        //onlineController.bufferedWriter.write(textField.getText());
-                        System.out.println(textField.getText());
+                        onlineController.sendMessage("login;" + textField.getText());
                     }
                 } catch (Exception e) {
                     e.printStackTrace();

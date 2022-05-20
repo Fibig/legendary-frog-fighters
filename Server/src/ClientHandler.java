@@ -23,9 +23,12 @@ public class ClientHandler extends Thread {
         try {
             //LOGIN
             while (!isLoggedIn())   {
+                System.out.println("not logged in");
                 String message = bufferedReader.readLine();
                 messageParser(message);
             }
+
+            System.out.println(Server.userList);
 
             //MESSAGE PARSER
             while (client.isConnected())    {
@@ -59,7 +62,6 @@ public class ClientHandler extends Thread {
         if (!Server.userList.stream().map(x -> x.name).collect(Collectors.toList()).contains(messageArr[1])) {
             Server.userList.add(this);
             sendMessage("success;true");
-            System.out.println(Server.userList.stream().map(x -> x.name).collect(Collectors.toList()));
         } else {
             sendMessage("success;false");
         }
@@ -67,7 +69,8 @@ public class ClientHandler extends Thread {
 
     public void sendMessage(String message)   {
         try {
-            this.bufferedWriter.write(message);
+            this.bufferedWriter.write(message + "\n\r");
+            this.bufferedWriter.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }
