@@ -4,6 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.chart.BubbleChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
@@ -13,8 +15,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.transform.Rotate;
 import javafx.stage.Stage;
 
+import java.awt.geom.AffineTransform;
+import java.awt.image.AffineTransformOp;
 import java.io.IOException;
 
 
@@ -34,7 +39,7 @@ public class SceneController {
         this.onlineController = new OnlineController(HOST, PORT);
         this.onlineController.start();
 
-        setMenuScene();
+        setGameScene();
         this.stage.show();
     }
 
@@ -113,25 +118,49 @@ public class SceneController {
         Background bGround = new Background(bImg);
         root.setBackground(bGround);
 
-        Image normal = new Image("res/alle frösche/normaler frosch.png",160,160,false,true);
+        Image normal = new Image("res/alle frösche/normaler frosch.png", 160, 160, false, true);
         ImageView normalFrosch = new ImageView(normal);
         normalFrosch.setX(900);
         normalFrosch.setY(300);
 
-        Image musik = new Image("res/alle frösche/musik frosch.png",160, 160,false,true);
+        Image musik = new Image("res/alle frösche/musik frosch.png", 160, 160, false, true);
         ImageView musikFrosch = new ImageView(musik);
         musikFrosch.setX(700);
         musikFrosch.setY(225);
 
-        Image weinen = new Image("res/alle frösche/weinender frosch.png",160, 160,false,true);
+        Image weinen = new Image("res/alle frösche/weinender frosch.png", 160, 160, false, true);
         ImageView weinFrosch = new ImageView(weinen);
         weinFrosch.setX(850);
         weinFrosch.setY(150);
 
 
+        final Canvas weinGespiegelt = new Canvas(300,300);
+        GraphicsContext weinenG = weinGespiegelt.getGraphicsContext2D();
+        weinenG.drawImage(weinen, 0, 0, weinen.getWidth(), weinen.getHeight(), weinen.getWidth(),0,-weinen.getWidth(),weinen.getHeight());
+        weinGespiegelt.setLayoutX(200);
+        weinGespiegelt.setLayoutY(150);
+
+
+        final Canvas musikGespiegelt = new Canvas(300,300);
+        GraphicsContext musikG = musikGespiegelt.getGraphicsContext2D();
+        musikG.drawImage(musik, 0, 0, musik.getWidth(), musik.getHeight(), musik.getWidth(),0,-musik.getWidth(),musik.getHeight());
+        musikGespiegelt.setLayoutX(350);
+        musikGespiegelt.setLayoutY(225);
+
+
+        final Canvas normalGespiegelt = new Canvas(300,300);
+        GraphicsContext normalG = normalGespiegelt.getGraphicsContext2D();
+        normalG.drawImage(normal, 0, 0, normal.getWidth(), normal.getHeight(), normal.getWidth(),0,-normal.getWidth(),normal.getHeight());
+        normalGespiegelt.setLayoutX(200);
+        normalGespiegelt.setLayoutY(300);
+
+
         root.getChildren().add(normalFrosch);
         root.getChildren().add(musikFrosch);
         root.getChildren().add(weinFrosch);
+        root.getChildren().add(weinGespiegelt);
+        root.getChildren().add(musikGespiegelt);
+        root.getChildren().add(normalGespiegelt);
 
 
         stage.setScene(scene);
