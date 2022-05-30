@@ -130,14 +130,14 @@ public class SceneController {
 
         Image weinen = new Image("res/alle frösche/weinender frosch.png", 160, 160, false, true);
         ImageView weinFrosch = new ImageView(weinen);
-        weinFrosch.setX(850);
+        weinFrosch.setX(900);
         weinFrosch.setY(150);
 
 
         final Canvas weinGespiegelt = new Canvas(300,300);
         GraphicsContext weinenG = weinGespiegelt.getGraphicsContext2D();
         weinenG.drawImage(weinen, 0, 0, weinen.getWidth(), weinen.getHeight(), weinen.getWidth(),0,-weinen.getWidth(),weinen.getHeight());
-        weinGespiegelt.setLayoutX(200);
+        weinGespiegelt.setLayoutX(150);
         weinGespiegelt.setLayoutY(150);
 
 
@@ -151,13 +151,15 @@ public class SceneController {
         final Canvas normalGespiegelt = new Canvas(300,300);
         GraphicsContext normalG = normalGespiegelt.getGraphicsContext2D();
         normalG.drawImage(normal, 0, 0, normal.getWidth(), normal.getHeight(), normal.getWidth(),0,-normal.getWidth(),normal.getHeight());
-        normalGespiegelt.setLayoutX(200);
+        normalGespiegelt.setLayoutX(150);
         normalGespiegelt.setLayoutY(300);
 
 
         root.getChildren().add(normalFrosch);
         root.getChildren().add(musikFrosch);
         root.getChildren().add(weinFrosch);
+
+
         root.getChildren().add(weinGespiegelt);
         root.getChildren().add(musikGespiegelt);
         root.getChildren().add(normalGespiegelt);
