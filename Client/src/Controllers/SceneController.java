@@ -18,10 +18,6 @@ import javafx.scene.layout.*;
 import javafx.scene.transform.Rotate;
 import javafx.stage.Stage;
 
-import java.awt.geom.AffineTransform;
-import java.awt.image.AffineTransformOp;
-import java.io.IOException;
-
 
 public class SceneController {
     Stage stage;

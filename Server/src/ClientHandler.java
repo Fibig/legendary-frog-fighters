@@ -61,7 +61,7 @@ public class ClientHandler extends Thread {
     public void actionLogin(String[] messageArr)   {
         if (!Server.userList.stream().map(x -> x.name).collect(Collectors.toList()).contains(messageArr[1])) {
             Server.userList.add(this);
-            sendMessage("success;true");
+            sendMessage("login;true");
         } else {
             sendMessage("success;false");
         }

@@ -32,7 +32,8 @@ public class OnlineController extends Thread {
         while (socket.isConnected()) {
             try {
                 while (this.bufferedReader.ready()) {
-                    System.out.println(this.bufferedReader.readLine());
+                    String incoming = this.bufferedReader.readLine();
+                    System.out.println(incoming);
                 }
             } catch (
                     IOException e) {
